@@ -1,0 +1,15 @@
+.Name{
+    font-size: 35px;
+    color: brown;
+}
+
+.List{
+    display: flex;
+    justify-content: space-around;
+    background-color: antiquewhite;
+    color: black;
+    margin-top: 3px;
+    font-size: 25px;
+    list-style: none;
+    text-decoration: none;
+}
