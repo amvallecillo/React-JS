@@ -1,11 +1,10 @@
-import "./ItemListContainer.css"
+import "./ItemListContainer.css";
+import Title from "../Title/Title";
 
-const ItemListContainer = ({greeting})=>{
+const ItemListContainer = ()=>{
     return (
-        <div>
-            <h3 className="Text">{greeting}</h3>
-        </div>
-    )
+        <Title greeting='Bienvenidos a Andrelos Bar' />
+    );
 }
 
 export default ItemListContainer
