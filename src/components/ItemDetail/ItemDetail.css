@@ -1,0 +1,12 @@
+.contenedor{
+    width: 100%;
+}
+
+.detail{
+    display: flex;
+    margin-top: 10px;
+}
+
+.detail_image{
+    width: 50%;
+}
