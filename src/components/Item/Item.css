@@ -1,0 +1,10 @@
+.beer{
+    width: 10px;
+    height: 10px;
+}
+
+.beer img{
+    width: 20%;
+    height: 20%;
+    object-fit: cover;
+}
