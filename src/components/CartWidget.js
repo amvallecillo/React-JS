@@ -1,6 +1,6 @@
-const Cart =()=>{
+const CartWidget =()=>{
     return(
         <i className="bi bi-cart4"></i>
     )
 };
-export default Cart
+export default CartWidget

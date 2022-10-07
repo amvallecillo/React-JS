@@ -3,7 +3,7 @@ import './ItemList.css';
 
 const ItemList=({data=[]})=>{
     return(
-        data.map(beers=> <Item key={beers.id} info={beers} />)
+        data.map(drinks=> <Item key={drinks.id} info={drinks} />)
     );
 }
 
