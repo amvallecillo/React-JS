@@ -17,8 +17,6 @@ function App() {
           <Route path='/cart' element={<Cart />} />
           <Route path='/detalle/:detalleId' element={<ItemDetailContainer />} />
         </Routes>
-        
-        
       </BrowserRouter>
     </div>
     </>
