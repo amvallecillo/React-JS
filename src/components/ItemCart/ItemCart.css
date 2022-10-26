@@ -1,0 +1,11 @@
+.Item{
+    display: flex;
+    border-bottom: 1px solid black;
+    width: 500px;
+}
+
+.Item image{  
+    width: 100px;
+    margin: 5px;
+
+}

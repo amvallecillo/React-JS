@@ -30,13 +30,23 @@ const CartProvider = ({children})=>{
 
     const removeProduct =(Id)=>setCart(cart.filter(product =>product.Id !==Id)) /*Remover un producto, deja en el setCart el array de los productos que no coinciden con el id*/
 
+    const totalPrice = ()=>{
+        return cart.reduce((accum,prod)=> accum + (prod.quantity * prod.price), 0);
+    }/*Suma los valores individuales de cada producto*/
 
+    const totalProducts = ()=>cart.reduce((accumulator,presentProduct)=> accumulator + presentProduct.quantity,0);
+    /*Suma la cantidad de productos*/
+
+    
     return(
         <CartContext.Provider value={{
             clearCart,
             isInTheCart,
             removeProduct,
             addProduct,
+            totalProducts,
+            totalPrice,
+            cart
         }}>
             {children}
         </CartContext.Provider>
