@@ -14,7 +14,7 @@ const {removeProduct} =useCartContext();
                 <p> Precio: ${product.price}</p>
                 <p> Cantidad: {product.quantity}</p>
                 <p>Subtotal: ${product.quantity * product.price} </p>
-                <button onClick={()=> removeProduct(product.Id) }>Eliminar</button>
+                <button onClick={()=> removeProduct(product.id) }>Eliminar</button>
             </div>
 
         </div>

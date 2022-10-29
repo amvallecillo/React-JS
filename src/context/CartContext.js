@@ -21,7 +21,6 @@ const CartProvider = ({children})=>{
         }
     }
 
-    console.log('carrito', cart)
 
     const clearCart=()=>setCart([]) /*Funcion para borrar el carrito, dejamos el setCart con el array vacio*/
 
