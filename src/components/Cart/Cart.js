@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import ItemCart from "../ItemCart/ItemCart";
@@ -6,23 +6,28 @@ import { addDoc, collection, getFirestore } from "firebase/firestore";
 const Cart=()=>{
     const{cart, totalPrice}= useCartContext();
 
-    const order = {
-        buyer:{
-            name: 'Andres',
-            phone:'4301119',
-            email: 'andres@gmail.com',
-        },
-        items: cart.map(product=>({id: product.id, title: product.title, price: product.price, quantity: product.quantity})),
-        total:totalPrice(),
-    }
+    const [id, setId] = useState();
+    const submitHandler= (ev)=>{
+        ev.preventDefault();
 
-    const ClickHandler= ()=>{
+        const order = {
+            buyer:{
+                name: ev.target[0].value,
+                phone:ev.target[1].value,
+                email: ev.target[2].value,
+            },
+            items: cart.map(product=>({id: product.id, title: product.title, price: product.price, quantity: product.quantity})),
+            total:totalPrice(),
+        }
+
         const db = getFirestore();
         const orderCollection = collection(db, 'order');/*Coleccion a la que hacemos referencia*/
         addDoc(orderCollection, order)
-            .then(({id}) => console.log(id))
-
+        .then((response)=> {
+            setId(response.id);
+        })
     }
+
 
     if (cart.length ===0 ){
         return(
@@ -41,7 +46,34 @@ const Cart=()=>{
             <p>
                 total: {totalPrice()}
             </p>
-            <button onClick={ClickHandler}>Generar orden de Compra</button>
+            <div>
+                <form onSubmit={submitHandler}>
+                <div>
+                    <label htmlFor="name">name</label>
+                    <input
+                    name="name"
+                    id="name"
+                    />
+                </div>
+                <div>
+                    <label htmlFor="phone">Phone</label>
+                    <input
+                    type="phone"
+                    name="phone"
+                    id="phone"
+                    />
+                </div>
+                <div>
+                    <label htmlFor="email">Email</label>
+                    <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    />
+                </div>
+                </form>
+                <button type= "submit">Generar orden de Compra</button>
+            </div>
         
         </>
     )

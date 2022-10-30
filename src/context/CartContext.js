@@ -5,12 +5,6 @@ export const useCartContext = ()=> useContext (CartContext) /*Creo una funcion p
 const CartProvider = ({children})=>{
     const [cart,setCart]=useState([]); /*El carrito inicialmente esta vacio*/
 
-    // const addProduct = (item, newQuantity)=>{
-    //     const newCart = cart.filter(prod=>prod.id !== item.id);
-    //     newCart.push({...item, quantity: newQuantity});
-    //     setCart(newCart)
-    // }
-    // console.log('carrito', cart)
     const addProduct = (item, quantity)=>{
         if(isInTheCart(item.id)){
             setCart(cart.map(product=>{
