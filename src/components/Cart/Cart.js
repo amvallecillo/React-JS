@@ -44,19 +44,20 @@ const Cart=()=>{
                 cart.map(product=> <ItemCart key={product.id} product={product}/>)
             }
             <p>
-                total: {totalPrice()}
+                Total: ${totalPrice()}
             </p>
+            <p>Complete los datos para finalizar la Orden de Compra</p>
             <div>
                 <form onSubmit={submitHandler}>
                 <div>
-                    <label htmlFor="name">name</label>
+                    <label htmlFor="name">Nombre</label>
                     <input
                     name="name"
                     id="name"
                     />
                 </div>
                 <div>
-                    <label htmlFor="phone">Phone</label>
+                    <label htmlFor="phone">Teléfono</label>
                     <input
                     type="phone"
                     name="phone"
@@ -71,8 +72,9 @@ const Cart=()=>{
                     id="email"
                     />
                 </div>
+                
+                <button type= "submit">Generar Orden de Compra</button>
                 </form>
-                <button type= "submit">Generar orden de Compra</button>
             </div>
         
         </>

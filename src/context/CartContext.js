@@ -17,9 +17,7 @@ const CartProvider = ({children})=>{
 
 
     const clearCart=()=>setCart([]) /*Funcion para borrar el carrito, dejamos el setCart con el array vacio*/
-
     const isInTheCart=(id)=>cart.find (product =>product.id ===id) ? true : false; /*Funcion para saber si el producto esta en el carrito*/
-
 
     const removeProduct =(id)=>setCart(cart.filter(product =>product.id !==id)) /*Remover un producto, deja en el setCart el array de los productos que no coinciden con el id*/
 
@@ -30,7 +28,6 @@ const CartProvider = ({children})=>{
     const totalProducts = ()=>cart.reduce((accumulator,presentProduct)=> accumulator + presentProduct.quantity,0);
     /*Suma la cantidad de productos*/
 
-    
     return(
         <CartContext.Provider value={{
             clearCart,

@@ -5,8 +5,6 @@ import React from 'react';
 
 const Item= ({info})=>{
 
-
-
     return(
         <Link to={`/detalle/${info.id}`} className='beer'>
             <img src={info.image} alt="" />
