@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import ItemCart from "../ItemCart/ItemCart";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
+import swal from 'sweetalert';
 const Cart=()=>{
     const{cart, totalPrice}= useCartContext();
 
@@ -18,7 +19,7 @@ const Cart=()=>{
             },
             items: cart.map(product=>({id: product.id, title: product.title, price: product.price, quantity: product.quantity})),
             total:totalPrice(),
-        }
+        };
 
         const db = getFirestore();
         const orderCollection = collection(db, 'order');/*Coleccion a la que hacemos referencia*/
@@ -26,7 +27,15 @@ const Cart=()=>{
         .then((response)=> {
             setId(response.id);
         })
-    }
+
+        swal("Gracias por su compra")
+        .then((value) => {
+        swal(`Su N° de Orden es: ${id}`);
+        });
+
+    };
+
+
 
 
     if (cart.length ===0 ){
@@ -75,6 +84,7 @@ const Cart=()=>{
                 
                 <button type= "submit">Generar Orden de Compra</button>
                 </form>
+            
             </div>
         
         </>

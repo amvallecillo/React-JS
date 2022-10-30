@@ -1,3 +1,16 @@
+# Proyecto del Curso de React de Coderhouse| Ecommerce de Bebidas
+
+Mi nombreses Andrés Vallecillo, aqui presento mi primer proyecto de React.
+
+En este proyecto se muestra una pagina de venta de bebidas.
+
+En el inicio uno puede visualizar el total de las bebidas que se ofrecen, si uno hace click en cualquiera de ellas puede ingresar al detalle de ese item. Una vez ingresado puede agregar al carrito de compras la cantidad que desea en funcion del stock que posee.
+Uno ademas puede navegar entre las distintas páginas dependiendo de la categoria de la bebida que desea.
+Una vez seleccionadas todas las bebidas deseadas, nos dirigimos al carrito donde finalizaremos la compra. Ahi existirá un formulario donde completará los datos del usuario. Y generará un tickect de compra, el cual mediante un swetalert nos devolverá el número de orden.
+Todos estos datos del ticket se subirán a Firebase.
+
+Al momento de esta entrega a mi gusto falta bastante maquetación de la pagina, pero funcionalmente trabaja bien.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
