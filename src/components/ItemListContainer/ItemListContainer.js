@@ -6,6 +6,7 @@ import {useParams} from "react-router-dom";
 import {getFirestore, collection, getDocs, query, where} from 'firebase/firestore';
 
 
+
 const ItemListContainer = ()=>{
 
     const [data,setData]=useState([]);
@@ -14,8 +15,8 @@ const ItemListContainer = ()=>{
 
     useEffect(()=>{
 
-        const querydb =getFirestore()/*Traemos Firestore*/
-        const queryCollection= collection(querydb,'items')/*Buscamos una coleccion*/
+        const querydb =getFirestore();/*Traemos Firestore*/
+        const queryCollection= collection(querydb,'items');/*Buscamos una coleccion*/
        
         if(categoriaId){
             const queryFilter=query(queryCollection, where('category', '==', categoriaId))

@@ -12,9 +12,9 @@ const CartProvider = ({children})=>{
     // }
     // console.log('carrito', cart)
     const addProduct = (item, quantity)=>{
-        if(isInTheCart(item.Id)){
+        if(isInTheCart(item.id)){
             setCart(cart.map(product=>{
-                return product.Id=== item.Id ? {...product, quantity:product.quantity + quantity}  : product
+                return product.id=== item.id ? {...product, quantity:product.quantity + quantity}  : product
             }));
         }else {
             setCart ([...cart, {...item,quantity}])
@@ -24,10 +24,10 @@ const CartProvider = ({children})=>{
 
     const clearCart=()=>setCart([]) /*Funcion para borrar el carrito, dejamos el setCart con el array vacio*/
 
-    const isInTheCart=(Id)=>cart.find (product =>product.Id ===Id) ? true : false; /*Funcion para saber si el producto esta en el carrito*/
+    const isInTheCart=(id)=>cart.find (product =>product.id ===id) ? true : false; /*Funcion para saber si el producto esta en el carrito*/
 
 
-    const removeProduct =(Id)=>setCart(cart.filter(product =>product.Id !==Id)) /*Remover un producto, deja en el setCart el array de los productos que no coinciden con el id*/
+    const removeProduct =(id)=>setCart(cart.filter(product =>product.id !==id)) /*Remover un producto, deja en el setCart el array de los productos que no coinciden con el id*/
 
     const totalPrice = ()=>{
         return cart.reduce((accum,prod)=> accum + (prod.quantity * prod.price), 0);

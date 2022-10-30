@@ -8,7 +8,7 @@ const {removeProduct} =useCartContext();
 
     return(
         <div className="Item">
-            <image src={product.image} alt={product.title}/>
+            <img src={product.image} alt={product.title}/>
             <div>
                 <p> Titulo: {product.title}</p>
                 <p> Precio: ${product.price}</p>
