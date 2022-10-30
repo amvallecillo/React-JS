@@ -1,6 +1,6 @@
 # Proyecto del Curso de React de Coderhouse| Ecommerce de Bebidas
 
-Mi nombreses Andrés Vallecillo, aqui presento mi primer proyecto de React.
+Mi nombre es Andrés Vallecillo, aqui presento mi primer proyecto de React.
 
 En este proyecto se muestra una pagina de venta de bebidas.
 
